@@ -4,19 +4,19 @@ from io import StringIO
 from agents import function_tool
 
 @function_tool
-def get_product_data_from_sheet()->list:
+def get_product_data_from_sheet() ->list:
     """
     Fetches the complete list of products from the connected Google Sheet.
 
     Returns:
-        list: A list of dictionaries, where each dictionary contains:
+        List[Dict[str, str]]: A list of dictionaries, where each dictionary contains:
             - name (str): The product's name
             - brand (str): The product's brand
-            - price (float): The product's price
+            - price (str): The product's price in PKR
 
     Purpose:
-        This tool is used to retrieve up-to-date product information for the E-commerce Customer Support Agent,
-        enabling it to answer customer queries accurately.
+        This tool is used to retrieve up-to-date product information for the 
+        E-commerce Customer Support Agent, enabling it to answer customer queries accurately.
     """
     
     sheet_url = "https://docs.google.com/spreadsheets/d/1H-CZXBiWAKAzHu6oRWDQCiLWezHxp6XnjPYA5t-nYXE/export?format=csv&gid=0"
@@ -32,4 +32,5 @@ def get_product_data_from_sheet()->list:
     except Exception as e:
         return [{"error": f"Failed to parse CSV data: {e}"}]
     
+    # Convert DataFrame to list of dicts
     return df.to_dict(orient="records")
