@@ -4,7 +4,7 @@ from io import StringIO
 from agents import function_tool
 
 @function_tool
-def get_product_data_from_sheet() -> list:
+def get_product_data_from_sheet():
     """
     Fetches the complete list of products from the connected Google Sheet.
 

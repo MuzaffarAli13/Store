@@ -2,7 +2,7 @@ import requests
 from agents import function_tool
 
 @function_tool
-def post_order_data_to_sheet(name: str, phone: str, shipping_address: str, product_name: str, quantity: int,price:int,total_price:int,status="Pending") -> str:
+def post_order_data_to_sheet(name: str, phone: str, shipping_address: str, product_name: str, quantity: int,price:int,total_price:int,status="Pending"):
     """
     Posts an order entry to Google Sheet using a webhook (Google Apps Script or Pipedream).
 
