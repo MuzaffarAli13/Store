@@ -1,0 +1,8 @@
+chainlit==2.6.8
+python-dotenv==0.21.1
+langchain==0.3.27
+langchain-community==0.3.27
+openai-agents==0.2.5
+streamlit==1.48.0
+pandas==2.2.3
+requests==2.32.3
